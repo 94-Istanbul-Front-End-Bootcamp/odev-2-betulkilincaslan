@@ -25,15 +25,18 @@ const fetchData = () => {
 const listData = (data) => {
   let list = document.querySelector(".list");
   list.classList.add("fw-bold");
-  list.innerHTML = data.map((element) => {
+  let showInfos = data.map((element) => {
     return `
         <li class="d-flex flex-column" id=${element.id}>
         <span>Name : ${element.name} </span> 
         <span>Age : ${element.age}</span>
         <span>IsActive : ${element.isActive}</span>
-        </li>
+        <span>email : ${element.email}</span>
+        </li> <br />
         `;
   });
+  showInfos = showInfos.join("");
+  list.innerHTML = showInfos;
 };
 
 // Filtering Data Function
